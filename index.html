@@ -1,0 +1,58 @@
+<!--project 4 digital watch-->
+
+<!doctype html>
+<html>
+<head>
+<title></title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-com[atible" content="ie=edge">
+<link rel="stylesheet" href="digital.css">
+</head>
+<body>
+
+<!-- =======================
+    START HTML FOR CLOCK
+	======================-->
+<div id="clock">
+   <h3>THE TIME IS NOW</h3>
+   <div id="time">
+        <div> <span id="hour"></span><span>Hours</span></div>
+        <div> <span id="min"></span><span>Minutes</span></div>
+        <div> <span id="sec"></span><span>Sec</span></div>
+   </div>
+</div>
+<!--====================================================end HTML==========================================-->
+
+
+<!--====================
+ start java script
+========================-->
+<script>
+	var interval = setInterval(showTime, 1000);
+    
+    function showTime(){
+	    
+		var hours = document.getElementById('hour');
+		var minutes = document.getElementById('min');
+		var seconds = document.getElementById('sec');
+            
+        var h = new Date().getHours();		
+        var m = new Date().getMinutes();		
+        var s = new Date().getSeconds();
+        // hours nhi h hoga yha pe
+		if(h > 12){
+		    h = h - 12; 
+		 }
+		 if(h == 0){
+		    h = 12;
+		 }
+		// .innerHtml nhi .innerHTML hota hai wo
+       hours.innerHTML = h;
+       minutes.innerHTML = m;
+       seconds.innerHTML = s;	   
+	}
+</script>
+<!--====================================================end java script==========================================-->
+</body>
+</html>
